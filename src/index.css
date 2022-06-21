@@ -5,3 +5,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display:none;
+  }
+
+  .scrollbar:hover::-webkit-scrollbar {
+    display:block;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #ededf7;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #cbcbfd;
+    border-radius: 100vh;
+    border: 1px solid #ededf7;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ededf7;
+  }
+}
