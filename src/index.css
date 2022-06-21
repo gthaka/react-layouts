@@ -31,3 +31,27 @@
     background: #ededf7;
   }
 }
+
+// https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply
+@layer components {
+  .default-menu-skin {
+    @apply border-gray-200/50 bg-gray-100;
+  }
+
+  .home-main {
+    @apply flex h-screen justify-between;
+  }
+
+  .main-menu-wtext {
+    @apply flex h-screen justify-between;
+  }
+
+  .main-menu-ocons {
+    @apply flex flex-col w-14 border-r-2 default-menu-skin;
+  }
+
+  .menu2-sub {
+    @apply border-r-2 border-gray-300;
+  }
+  
+}
