@@ -32,7 +32,7 @@
   }
 }
 
-// https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply
+/* https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply */
 @layer components {
   .default-menu-skin {
     @apply border-gray-200/50 bg-gray-100;
