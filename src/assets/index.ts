@@ -1,0 +1,1 @@
+export {ReactComponent as CircleLoader} from './rotate.svg';
