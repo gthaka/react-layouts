@@ -1,4 +1,4 @@
-import { HomeOutlined, ThreeDRotation, FoodBankRounded, Battery0BarTwoTone, Battery1BarTwoTone, Battery20TwoTone, Battery50TwoTone, Battery80TwoTone, BatteryFullTwoTone, } from '@mui/icons-material';
+import { HomeOutlined, ThreeDRotation, Battery0BarTwoTone, Battery1BarTwoTone, Battery20TwoTone, Battery50TwoTone, Battery80TwoTone, BatteryFullTwoTone, SettingsTwoTone, } from '@mui/icons-material';
 
 interface INav {
     [key:string]:{id?:string, name: string, link: string, icon:any;}[]
@@ -16,7 +16,7 @@ export const NAVI:INav = {
         { id: 'i7', name: "Item 7", link: "/item6", icon: (props?: any) => (<BatteryFullTwoTone {...props} />), },
     ],
     footer: [
-        { name: "FT Item", link: "/ft", icon: (props: any) => (<FoodBankRounded {...props} />), },
+        { name: "FT Item", link: "/ft", icon: (props: any) => (<SettingsTwoTone {...props} />), },
     ],
 }
 
