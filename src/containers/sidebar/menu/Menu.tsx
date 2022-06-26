@@ -1,5 +1,6 @@
 import { CodeOffTwoTone } from '@mui/icons-material';
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { NAVI } from '../../../config';
 
 interface IMenu {
@@ -23,9 +24,9 @@ const Menu:React.FC<IMenu|any> = props => {
 
                     {NAVI.main.map(i => (
                         <li key={i.name} className={`flex p-[2px] rounded border-[1.5px] border-spacing-1 border-indigo-300 bg-gray-100 ${!props.hasSub && ` text-center`}`}>
-                            <a href={i.link} className="p-[2px] border-1 w-full border-1 border-gray-400 " >
+                            <NavLink to={i.link} className="p-[2px] border-1 w-full border-1 border-gray-400 " >
                                 {<i.icon className="text-indigo-600" />}{props.hasSub && `   ${i.name}`}
-                            </a>
+                            </NavLink>
                         </li>
                     ))}
 
@@ -36,9 +37,9 @@ const Menu:React.FC<IMenu|any> = props => {
                     <ul className='list-none space-y-1.5 py-2'>
                         {NAVI.footer.map(i => (
                             <li key={i.name} className='py-1'>
-                                <a href={i.link} className="p-[2px] border-1" >
+                                <NavLink to={i.link} className="p-[2px] border-1" >
                                     {<i.icon className="text-purple-600" />}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>

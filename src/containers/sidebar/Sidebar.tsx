@@ -20,7 +20,7 @@ const Sidebar: FC<ISidebarProps> = (props) => {
             );
         case 'sub':
             return (
-                <Submenu className={className} menu={{id:'i1',name:'Menu 1'}} />
+                <Submenu className={className} />
             );
         default:
             return (<div>No Menu Found</div>);

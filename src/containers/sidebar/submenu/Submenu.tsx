@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { SUB_NAVI } from '../../../config'
 
 interface IProps {
@@ -21,9 +22,9 @@ const Submenu: React.FC<IProps | any> = props => {
                     <ul className='list-none space-y-1.5 py-2 pl-4'>
                         {SUB_NAVI[props.menu.id].map(i => (
                             <li key={i.name} >
-                                <a href={i.link} className="border-1 border-gray-400">
+                                <NavLink to={i.link} className="border-1 border-gray-400">
                                     {i.name}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
