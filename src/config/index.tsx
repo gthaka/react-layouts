@@ -1,6 +1,10 @@
 import { HomeOutlined, ThreeDRotation, Battery1Bar, Battery0Bar, Battery20, Battery50, Battery80, BatteryFull, FoodBankRounded, } from '@mui/icons-material';
 
-export const NAVI = {
+interface INav {
+    [key:string]:{id?:string, name: string, link: string, icon:any;}[]
+}
+
+export const NAVI:INav = {
     main: [
         { id: 'home', name: "Home", link: "/", icon: (props?: any) => (<HomeOutlined {...props} />), },
         { id: 'i1', name: "Item 1", link: "/item1", icon: (props?: any) => (<ThreeDRotation {...props} />), },
@@ -16,18 +20,22 @@ export const NAVI = {
     ],
 }
 
-export const SUB_NAVI = {
-    i1: [
+interface ISubNav {
+    [key:string]:{name: string, link: string;}[]
+}
+
+export const SUB_NAVI:ISubNav = {
+    "i1": [
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
     ],
-    i2: [
+    "i2": [
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
     ],
-    i3: [
+    "i3": [
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
         { name: "Item 1", link: "/item1", },
