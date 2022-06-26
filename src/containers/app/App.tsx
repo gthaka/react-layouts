@@ -1,7 +1,7 @@
 // import { CodeOffTwoTone } from '@mui/icons-material';
 // import React from 'react';
-import { CircleLoader } from '../../assets';
-import Button from '../../components/button/Button';
+// import { CircleLoader } from '../../assets';
+// import Button from '../../components/button/Button';
 // import { NAVI, SUB_NAVI } from '../../config'
 import Sidebar from '../sidebar/Sidebar';
 
