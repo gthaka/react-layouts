@@ -7,8 +7,8 @@ interface IMenu {
     className?: string;
 }
 
-const Menu:React.FC<IMenu|any> = props => {
-    const width = props.hasSub ? 'w-56':'w-14';
+const Menu: React.FC<IMenu | any> = props => {
+    const width = props.hasSub ? 'w-14' : 'w-56';
     return (
         <aside className={`${props.className} ${width}`}>
             <div className='pt-4 font-nzito sticky z-30 top-0 bg-gray-200'>
@@ -25,7 +25,7 @@ const Menu:React.FC<IMenu|any> = props => {
                     {NAVI.main.map(i => (
                         <li key={i.name} className={`flex p-[2px] rounded border-[1.5px] border-spacing-1 border-indigo-300 bg-gray-100 ${!props.hasSub && ` text-center`}`}>
                             <NavLink to={i.link} className="p-[2px] border-1 w-full border-1 border-gray-400 " >
-                                {<i.icon className="text-indigo-600" />}{props.hasSub && `   ${i.name}`}
+                                {<i.icon className="text-indigo-600" />}{!props.hasSub && `   ${i.name}`}
                             </NavLink>
                         </li>
                     ))}
