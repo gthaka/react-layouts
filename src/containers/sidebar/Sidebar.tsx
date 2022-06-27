@@ -2,6 +2,7 @@
 import { FC, useContext } from 'react'
 import { useLocation } from 'react-router-dom';
 import { MenuContext } from '../../components/context/MenuContextProvider';
+import { SUB_NAVI } from '../../config';
 import Menu from './menu/Menu';
 import Submenu from './submenu/Submenu';
 // import { NAVI } from '../../config'
@@ -19,7 +20,7 @@ const Sidebar: FC<ISidebarProps> = (props) => {
     // console.log(`===<><><><>${menu}`);
     setMenu(menuName(location.pathname));
     // console.log(`===>${menu}`);
-    const subbed = false;
+    const subbed = (menu in SUB_NAVI);
     switch (props.type) {
         case 'main':
             return (
@@ -27,7 +28,7 @@ const Sidebar: FC<ISidebarProps> = (props) => {
             );
         case 'sub':
             return (
-                <Submenu className={className} />
+                <Submenu className={className} hasSub={subbed} />
             );
         default:
             return (<div>No Menu Found</div>);
