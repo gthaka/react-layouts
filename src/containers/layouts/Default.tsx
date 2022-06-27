@@ -1,5 +1,6 @@
 import { NotificationsTwoTone, SearchTwoTone } from '@mui/icons-material';
 import React from 'react'
+import { MenuContextProvider } from '../../components/context/MenuContextProvider';
 import Sidebar from '../sidebar/Sidebar'
 
 interface IDefault {
@@ -11,12 +12,12 @@ const Default: React.FC<IDefault | any> = (props) => {
     <div className='flex flex-row bg-white font-bold '>
       {/* Sidebar  */}
       <div className='flex h-screen justify-between '>
-        {/* Main Sidebar */}
-        <Sidebar className='flex flex-col border-r-2 border-gray-300 bg-gray-200' type='main' />
-        {/* Sub sidebar container */}
-        {/* <div className='border-r-2 border-gray-300'> */}
-        <Sidebar className='flex flex-col w-56 h-screen' type='sub' />
-        {/* </div> */}
+        <MenuContextProvider>
+          {/* Main Sidebar */}
+          <Sidebar className='flex flex-col border-r-2 border-gray-300 bg-gray-200' type='main' />
+          {/* Sub sidebar container */}
+          <Sidebar className='flex flex-col w-56 h-screen' type='sub' />
+        </MenuContextProvider>
       </div>
       {/* Main area Dash */}
       <div className='flex flex-col h-screen w-screen'>
@@ -75,7 +76,7 @@ const Default: React.FC<IDefault | any> = (props) => {
           {props.children}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
