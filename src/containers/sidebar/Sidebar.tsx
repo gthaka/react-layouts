@@ -1,5 +1,7 @@
 // import { CodeOffTwoTone } from '@mui/icons-material'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
+import { useLocation } from 'react-router-dom';
+import { MenuContext } from '../../components/context/MenuContextProvider';
 import Menu from './menu/Menu';
 import Submenu from './submenu/Submenu';
 // import { NAVI } from '../../config'
@@ -11,9 +13,14 @@ interface ISidebarProps {
 }
 
 const Sidebar: FC<ISidebarProps> = (props) => {
-    const {className} = props;
+    const { className } = props;
+    const location = useLocation();
+    const { menu, setMenu, subMenu, setSubMenu } = useContext(MenuContext);
+    // console.log(`===<><><><>${menu}`);
+    setMenu(menuName(location.pathname));
+    // console.log(`===>${menu}`);
     const subbed = false;
-    switch(props.type){
+    switch (props.type) {
         case 'main':
             return (
                 <Menu className={className} hasSub={subbed} />
@@ -24,7 +31,7 @@ const Sidebar: FC<ISidebarProps> = (props) => {
             );
         default:
             return (<div>No Menu Found</div>);
-        
+
     }
 
     // return (
@@ -32,6 +39,10 @@ const Sidebar: FC<ISidebarProps> = (props) => {
     //         <menu {...props} />
     //     // </aside>
     // )
+}
+
+const menuName = (pathname: string) => {
+    return (pathname.length > 1) ? pathname.slice(1) : pathname;
 }
 
 export default Sidebar
