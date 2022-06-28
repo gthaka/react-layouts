@@ -12,11 +12,14 @@ interface ISidebarProps {
     children?: React.ReactNode;
     type: string;
 }
+type menuStates = { menu:string; setMenu:Function; subMenu:string; setSubMenu:Function; };
 
 const Sidebar: FC<ISidebarProps> = (props) => {
     const { className } = props;
     const location = useLocation();
-    const { menu, setMenu, subMenu, setSubMenu } = useContext(MenuContext);
+    const { menu, setMenu, 
+        // subMenu, setSubMenu 
+    } = useContext(MenuContext) as menuStates;
     // console.log(`===<><><><>${menu}`);
     setMenu(menuName(location.pathname));
     // console.log(`===>${menu}`);

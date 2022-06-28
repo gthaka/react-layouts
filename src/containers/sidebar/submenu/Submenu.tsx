@@ -9,10 +9,12 @@ interface IProps {
     // menu?: { id: string, name: string; };
 }
 
+type menuStates = { menu:string; setMenu:Function; subMenu:string; setSubMenu:Function; };
+
 const Submenu: React.FC<IProps | boolean | any> = props => {
     // c
     // const {id, name} = props.menu;
-    const { menu } = useContext(MenuContext)
+    const { menu } = useContext(MenuContext) as menuStates;
     return (
         props.hasSub &&
         <div className='border-r-2 border-gray-300'>
